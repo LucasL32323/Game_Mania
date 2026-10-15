@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Compra Direta - GameMania</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="bg-dark text-white py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+          <img src="imgs/Logo4.png" alt="Logo GameMania" height="160" id="logo4" style="user-select: none; pointer-events: none;">
+
+        <h1 class="h3 m-0 titulosite">GameMania</h1>
+<img src="imgs/Logo3.png" alt="Logo GameMania2" height="160" id="logo3">
+
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3">
+      <div class="container d-flex justify-content-start">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="pcgamer.html">PC Gamer</a></li>
+            <li class="nav-item"><a class="nav-link" href="hardware.html">Hardware</a></li>
+            <li class="nav-item"><a class="nav-link" href="computadores.html">Computadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="perifericos.html">Periféricos</a></li>
+            <li class="nav-item"><a class="nav-link" href="escritorio.html">Escritório</a></li>
+            <li class="nav-item"><a class="nav-link" href="entreoucadastrese.html">Entre ou cadastre-se</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  
+  <main class="container my-5">
+    <h2 class="mb-4 text-center">Finalizar Compra</h2>
+
+    <div class="row g-5">
+      <div class="col-md-5 text-center">
+        <img id="imagemProduto" src="" alt="" class="img-fluid" style="max-width: 300px;">
+        <p class="mt-3 fw-bold" id="nomeProduto"></p>
+        <p id="precoProduto" class="text-success fs-5 fw-bold"></p>
+      </div>
+
+      <div class="col-md-7">
+        <form id="formCompraDireta">
+          <h5>Dados de Pagamento</h5>
+
+          <div class="mb-3">
+            <label for="nome" class="form-label">Nome completo:</label>
+            <input type="text" id="nome" name="nome" class="form-control" required>
+          </div>
+
+          <div class="mb-3">
+            <label for="cartao" class="form-label">Número do cartão:</label>
+            <input type="text" id="cartao" name="cartao" class="form-control" maxlength="19" required>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="validade" class="form-label">Validade:</label>
+              <input type="text" id="validade" name="validade" class="form-control" maxlength="5" placeholder="MM/AA" required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="cvv" class="form-label">CVV:</label>
+              <input type="text" id="cvv" name="cvv" class="form-control" maxlength="3" required>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="cpf" class="form-label">CPF:</label>
+            <input type="text" id="cpf" name="cpf" class="form-control" maxlength="11" required>
+          </div>
+
+          <button type="submit" class="btn btn-comprar w-100">Comprar agora</button>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  
+  <footer id="contato" class="rodape-principal">
+    <div class="container">
+      <div class="contato-bloco">
+        <h5 class="titulo-contato">CONTATO</h5>
+
+        <p>
+          <a href="https://www.google.com/maps?q=Av.+Washington+Luís,+105,+Santos+-+SP" target="_blank" class="link-contato">
+            <img src="imgs/address.png" alt="Ícone endereço" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+            Ver localização no mapa — Av. Washington Luís, 105 - Vila Matias Santos - SP
+          </a>
+        </p>
+
+        <p>
+          <img src="imgs/Telephone.png" alt="Ícone de telefone" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+          (13) 9212-4291
+        </p>
+
+        <p>
+          <img src="imgs/Email.png" alt="Ícone de e-mail" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+          <a href="mailto:contato@gamemania.com.br" class="link-contato">contato@gamemania.com.br</a>
+        </p>
+
+        <p>
+          <img src="imgs/horario.png" alt="Ícone de horário" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+          Segunda a Sábado: 08h às 21h
+        </p>
+      </div>
+
+      <div class="rede-sociais">
+        <a href="https://www.facebook.com/?locale=pt_BR/" target="_blank"><img src="imgs/facebook.png" alt="Facebook" class="icone-social"></a>
+        <a href="https://www.instagram.com/accounts/emailsignup/?next=https%3A%2F%2Fwww.instagram.com%2F" target="_blank"><img src="imgs/instagram.png" alt="Instagram" class="icone-social"></a>
+        <a href="https://www.youtube.com/" target="_blank"><img src="imgs/youtube.png" alt="YouTube" class="icone-social"></a>
+        <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%3Flang%3Den&lang=en&enter_method=mandatory" target="_blank"><img src="imgs/tiktok.png" alt="TikTok" class="icone-social"></a>
+        <a href="https://www.whatsapp.com/" target="_blank" class="btn-contato">💬 Fale pelo WhatsApp</a>
+      </div>
+
+      <div class="text-center mt-4">
+        <p>
+          <img src="imgs/Copyright.png" alt="Ícone copyright" width="17px" height="20px" style="vertical-align: middle; margin-right: 8px;">
+          GameMania - 2025 - Todos os direitos reservados
+        </p>
+        <p id="info-pesquisa" class="mt-3"></p>
+      </div>
+    </div>
+  </footer>
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+
+</html>

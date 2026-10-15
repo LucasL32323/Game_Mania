@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameMania - PC Gamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+ <header class="bg-dark text-white py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center gap-3">
+      <img src="imgs/Logo4.png" alt="Logo GameMania" height="160" style="user-select: none; pointer-events: none;">
+      <h1 class="h3 m-0 titulosite">GameMania</h1>
+      <img src="imgs/Logo3.png" alt="Logo GameMania2" height="160" id="logo3">
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3 sticky-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="menuPrincipal">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active" href="pcgamer.html">Destaques</a></li>
+          <li class="nav-item"><a class="nav-link" href="hardware.html">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="computadores.html">Computadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="perifericos.html">Periféricos</a></li>
+          <li class="nav-item"><a class="nav-link" href="escritorio.html">Escritório</a></li>
+          <li class="nav-item d-flex align-items-center">
+            <a id="usuarioLogado" class="nav-link d-flex align-items-center gap-2" href="entreoucadastrese.html">
+              <img src="imgs/entreoucadastreseicone.png" alt="Ícone de login" width="20" height="20" draggable="false" />
+              <span id="usuarioTexto">Entre ou cadastre-se</span>
+            </a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <a id="menuCarrinho" class="btn-carrinho-nav" href="carrinho.html">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </a>
+          </li>
+        </ul>
+        <form class="d-flex ms-3" role="search">
+          <input type="text" class="form-control search-input" 
+                 placeholder="Buscar produtos..." 
+                 style="width: 500px; background-color: #3a3a3a; color: white; border: none;">
+        </form>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+
+  <section id="produtos" class="container my-5">
+    <h2 class="mb-4 text-center">
+      <img src="imgs/pcicon.png" alt="pc icone" style="width: 42px; vertical-align: middle; margin-right: 10px; user-select: none;">
+
+      Destaques da GameMania
+    </h2>
+    <div class="row g-4 product-list">
+    
+     <div class="col-5th">
+  <div class="card h-100 product-item">
+    <img src="imgs/pc1.png" class="card-img-top" alt="PC Gamer RTX">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <h5 class="card-title product-title">PC Gamer RTX 3060</h5>
+        <p>Intel i5, 16GB RAM, SSD 512GB</p>
+        <p class="text-success fw-bold text-center">R$ 4.999,00</p>
+
+      </div>
+       <div class="d-flex justify-content-between">
+        <a href="pcgamerrtx3060.html" class="btn btn-primary">Mais Informações</a>
+        
+       <button type="button" class="btn btn-addcart">
+  <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="col-5th">
+  <div class="card h-100 product-item">
+    <img src="imgs/pc2.png" class="card-img-top" alt="PC Escritório Dual Core">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <h5 class="card-title product-title">PC Escritório Dual Core</h5>
+        <p>Intel G6400, 8GB RAM, HD 1TB</p>
+        <p class="text-success fw-bold text-center">R$ 1.899,00</p>
+      </div>
+      <div class="d-flex justify-content-between">
+        <a href="pcdualcore.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-5th">
+  <div class="card h-100 product-item">
+    <img src="imgs/pc3.png" class="card-img-top" alt="PC Gamer Ryzen">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <h5 class="card-title product-title">PC Gamer Ryzen 9</h5>
+        <p>Ryzen 9 5900X, 32GB RAM, SSD 1TB</p>
+        <p class="text-success fw-bold text-center">R$ 7.499,00</p>
+      </div>
+       <div class="d-flex justify-content-between">
+        <a href="Ryzen95900x.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="col-5th">
+        <div class="card h-100 product-item">
+          <img src="imgs/pc4.png" class="card-img-top" alt="PC Gamer Ryzen 5">
+          <div class="card-body">
+            <h5 class="card-title product-title">PC Gamer Ryzen 5</h5>
+            <p>Ryzen 5 5600G, 16GB RAM, SSD 480GB</p>
+            <p class="text-success fw-bold">R$ 3.799,00</p>
+             <div class="d-flex justify-content-between">
+        <a href="Ryzen55600.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="col-5th">
+        <div class="card h-100 product-item">
+          <img src="imgs/pc5.png" class="card-img-top" alt="Notebook Intel">
+          <div class="card-body">
+            <h5 class="card-title product-title">Notebook Intel</h5>
+            <p>Intel i3, 8GB RAM, SSD 256GB</p>
+            <p class="text-success fw-bold">R$ 2.199,00</p>
+            <div class="d-flex justify-content-between">
+        <a href="NotebookIntel.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div class="col-5th">
+  <div class="card h-100 product-item">
+    <img src="imgs/pc6.png" class="card-img-top" alt="Computador Completo">
+    <div class="card-body">
+      <h5 class="card-title product-title">Computador Completo</h5>
+      <p>Intel i5, 8GB RAM, SSD 240GB</p>
+      <p class="text-success fw-bold text-center">R$ 2.999,00</p>
+      <div class="d-flex justify-content-between">
+    <a href="pccompleto.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <div class="col-5th">
+        <div class="card h-100 product-item">
+          <img src="imgs/pc7.png" class="card-img-top" alt="PC Gamer Nitro X">
+          <div class="card-body">
+            <h5 class="card-title product-title">PC Gamer Nitro X</h5>
+            <p>Ryzen 7 5700X, 32GB RAM, SSD NVMe 1TB, RTX 4070</p>
+            <p class="text-success fw-bold">R$ 7.499,00</p>
+         <div class="d-flex justify-content-between">
+        <a href="PCGamerNitro.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="col-5th">
+        <div class="card h-100 product-item">
+          <img src="imgs/pc8.png" class="card-img-top" alt="PC Profissional Intel Core">
+          <div class="card-body">
+            <h5 class="card-title product-title">PC Profissional </h5>
+            <p>i7-12700, 32GB DDR5, SSD 1TB + HD 2TB</p>
+            <p class="text-success fw-bold">R$ 5.299,00</p>
+           <div class="d-flex justify-content-between">
+        <a href="pcprofissional.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <div class="col-5th">
+        <div class="card h-100 product-item">
+          <img src="imgs/pc9.png" class="card-img-top" alt="Computador Gamer">
+          <div class="card-body">
+            <h5 class="card-title product-title">Computador Gamer</h5>
+            <p>Intel Core i7-11700, 16GB DDR4, SSD 512GB</p>
+            <p class="text-success fw-bold">R$ 4.499,00</p>
+           <div class="d-flex justify-content-between">
+        <a href="ComputadorGamer.html" class="btn btn-primary">Mais Informações</a>
+        <button type="button" class="btn btn-addcart">
+          <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+       <div class="col-5th">
+  <div class="card h-100 product-item">
+    <img src="imgs/NotebookGamer.png" class="card-img-top" alt="Notebook Gamer">
+    <div class="card-body d-flex justify-content-between align-items-center">
+      <div>
+        <h5 class="card-title product-title">Notebook Gamer</h5>
+        <p>Intel i5, 16GB RAM, SSD 512GB</p>
+        <p class="text-success fw-bold text-center">R$ 4.999,00</p>
+
+      </div>
+       <div class="d-flex justify-content-between">
+        <a href="pcgamerrtx3060.html" class="btn btn-primary">Mais Informações</a>
+        
+       <button type="button" class="btn btn-addcart">
+  <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+    
+    <br><br>
+<section class="container my-4">
+  <h2 class="mb-3"></h2>
+  <div id="search-results" class="row g-4"></div>
+  <p id="info-pesquisa" class="text-muted small"></p>
+</section>
+
+    
+
+    <div id="carouselPropagandas" class="carousel slide" data-bs-ride="carousel">
+ 
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselPropagandas" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselPropagandas" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselPropagandas" data-bs-slide-to="2"></button>
+    <button type="button" data-bs-target="#carouselPropagandas" data-bs-slide-to="3"></button>
+    <button type="button" data-bs-target="#carouselPropagandas" data-bs-slide-to="4"></button>
+  </div>
+
+ 
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imgs/banner1.jpg" class="d-block w-100" alt="Promoção 1">
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/banner4.png" class="d-block w-100" alt="Promoção 2">
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/Banner5.jpg" class="d-block w-100" alt="Promoção 3">
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/Banner3.jpg" class="d-block w-100" alt="Promoção 4">
+    </div>
+    <div class="carousel-item">
+      <img src="imgs/banner2.png" class="d-block w-100" alt="Promoção 5">
+    </div>
+  </div><br><br>
+    
+ 
+
+  
+
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselPropagandas" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselPropagandas" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+<section class="container my-5">
+ 
+ 
+  <div class="row g-4 product-list">
+   
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/x360.png" class="card-img-top" alt="Controle Xbox 360">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Controle Xbox 360</h5>
+            <p class="text-success fw-bold text-center">R$ 149,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/playstation5.webp" class="card-img-top" alt="PlayStation 5">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">PlayStation 5</h5>
+            <p class="text-success fw-bold text-center">R$ 4.499,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/Headset7.1.webp" class="card-img-top" alt="Headset Gamer 7.1">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Headset Gamer 7.1</h5>
+            <p class="text-success fw-bold text-center">R$ 399,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/XBoxSX.webp" class="card-img-top" alt="Xbox Series X" >
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Xbox Series X</h5>
+            <p class="text-success fw-bold text-center">R$ 4.299,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/VolanteGamer.webp" class="card-img-top" alt="Volante Gamer">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Volante Gamer</h5>
+            <p class="text-success fw-bold text-center">R$ 1.199,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div class="row g-4 product-list mt-4">
+ 
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/NintendoSwitch-removebg-preview.png" class="card-img-top" alt="Nintendo Switch OLED">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Nintendo Switch OLED</h5>
+            <p class="text-success fw-bold text-center">R$ 2.499,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/SuporteHeadset.webp" class="card-img-top" alt="Suporte para Headset">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Suporte para Headset</h5>
+            <p class="text-success fw-bold text-center">R$ 149,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/mininintendo.webp" class="card-img-top" alt="Mini Super Nintendo">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Super Nintendo Mini</h5>
+            <p class="text-success fw-bold text-center">R$ 699,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/monitor144hz.webp" class="card-img-top" alt="Monitor Gamer 144Hz">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">Monitor Gamer 144Hz</h5>
+            <p class="text-success fw-bold text-center">R$ 1.499,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/playstation2.webp" class="card-img-top" alt="PlayStation 2 Slim">
+        <div class="card-body d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="card-title product-title">PlayStation 2 Slim</h5>
+            <p class="text-success fw-bold text-center">R$ 599,00</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <a href="#" class="btn btn-primary">Mais Informações</a>
+            <button type="button" class="btn btn-addcart">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+      
+  </section>
+
+
+  
+
+
+<footer id="contato" class="rodape-principal">  <div class="container">
+    <div class="contato-bloco">
+  <h5 class="titulo-contato">CONTATO</h5>
+
+  <p>
+ <a href="https://www.google.com/maps?q=Av.+Washington+Luís,+105,+Santos+-+SP" target="_blank" class="link-contato">
+  <img src="imgs/address.png" alt="Ícone endereço" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+  Ver localização no mapa — Av. Washington Luís, 105 - Vila Matias Santos - SP
+</a>
+
+
+  <p>
+    <img src="imgs/Telephone.png" alt="Ícone de telefone" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+    (13) 9212-4291
+  </p>
+
+  <p>
+    <img src="imgs/Email.png" alt="Ícone de e-mail" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+    <a href="mailto:contato@gamemania.com.br" class="link-contato">contato@gamemania.com.br</a>
+  </p>
+
+  <p>
+    <img src="imgs/horario.png" alt="Ícone de horário" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+    Segunda a Sábado: 08h às 21h
+  </p>
+
+
+
+
+</div>
+
+
+      
+<div class="rede-sociais">
+  <a href="https://www.facebook.com/?locale=pt_BR/" target="_blank"><img src="imgs/facebook.png" alt="Facebook" class="icone-social"></a>
+  <a href="https://www.instagram.com/accounts/emailsignup/?next=https%3A%2F%2Fwww.instagram.com%2F" target="_blank"><img src="imgs/instagram.png" alt="Instagram" class="icone-social"></a>
+  <a href="https://www.youtube.com/" target="_blank"><img src="imgs/youtube.png" alt="YouTube" class="icone-social"></a>
+  <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%3Flang%3Den&lang=en&enter_method=mandatory" target="_blank"><img src="imgs/tiktok.png" alt="TikTok" class="icone-social"></a>
+  <a href="https://www.whatsapp.com/"  alt ="whatsapp" target="_blank" class="btn-contato" >💬 Fale pelo WhatsApp</a>
+</div>
+    <div class="text-center mt-4">
+      <p>
+        <img src="imgs/Copyright.png" alt="Ícone copyright" width="17px" height="20px" style="vertical-align: middle; margin-right: 8px;">
+        GameMania - 2025 - Todos os direitos reservados
+      </p>
+      <p id="info-pesquisa" class="mt-3"></p>
+    </div>
+  </div>
+</footer>
+
+<script src="barrapesquisa.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="titulo.js"></script>
+<script src="compra.js"></script>
+
+</body>
+</html>

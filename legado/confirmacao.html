@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carrinho de Compras - GameMania</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header class="bg-dark text-white py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center gap-3">
+      <img src="imgs/Logo4.png" alt="Logo GameMania" height="160" id="logo4">
+      <h1 class="h3 m-0 titulosite">GameMania</h1>
+      <img src="imgs/Logo3.png" alt="Logo GameMania2" height="160" id="logo3">
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="pcgamer.html">PC Gamer</a></li>
+          <li class="nav-item"><a class="nav-link" href="hardware.html">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="computadores.html">Computadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="perifericos.html">Periféricos</a></li>
+          <li class="nav-item"><a class="nav-link" href="escritorio.html">Escritório</a></li>
+          <li class="nav-item"><a class="nav-link" href="carrinho.html">Carrinho</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+  <section class="container my-5 text-center">
+    <div class="d-flex align-items-center justify-content-center mb-4">
+      <img src="imgs/pedidoconfirmado.png" alt="Pedido confirmado" style="width: 50px; margin-right: 15px;">
+      <h2 class="m-0">Pedido Confirmado!</h2>
+    </div>
+
+    <p>Obrigado por comprar com a <strong>GameMania</strong>!</p>
+    <p>Seu pedido do <strong id="nomeProduto">...</strong> foi recebido com sucesso.</p>
+
+    <div class="mt-4">
+      <p><strong>Quantidade:</strong> <span id="qtdResumo">...</span></p>
+      <p><strong>Valor total:</strong> <span id="valorResumo">...</span></p>
+      <p><strong>Previsão de entrega:</strong> 5 a 7 dias úteis</p>
+      <p><strong>Número do pedido:</strong> <span id="numeroPedido">#</span><span id="pedidoID"></span></p>
+    </div>
+  <a href="pcgamer.html" class="btn btn-comprar mt-4">Voltar à loja</a>
+   
+  </section>
+                  
+
+
+
+
+
+  <footer id="contato" class="rodape-principal">
+    <div class="container">
+      <div class="contato-bloco">
+        <h5 class="titulo-contato">CONTATO</h5>
+        <p>
+          <a href="https://www.google.com/maps?q=Av.+Washington+Luís,+105,+Santos+-+SP" target="_blank" class="link-contato">
+            <img src="imgs/address.png" alt="Ícone endereço" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+            Ver localização no mapa — Av. Washington Luís, 105 - Vila Matias Santos - SP
+          </a>
+        </p>
+        <p><img src="imgs/Telephone.png" alt="Ícone de telefone" style="width: 20px; margin-right: 8px;"> (13) 9212-4291</p>
+        <p><img src="imgs/Email.png" alt="Ícone de e-mail" style="width: 20px; margin-right: 8px;"> <a href="mailto:contato@gamemania.com.br" class="link-contato">contato@gamemania.com.br</a></p>
+        <p><img src="imgs/horario.png" alt="Ícone de horário" style="width: 20px; margin-right: 8px;"> Segunda a Sábado: 08h às 21h</p>
+      </div>
+
+     <div class="rede-sociais">
+  <a href="https://www.facebook.com/?locale=pt_BR/" target="_blank"><img src="imgs/facebook.png" alt="Facebook" class="icone-social"></a>
+  <a href="https://www.instagram.com/accounts/emailsignup/?next=https%3A%2F%2Fwww.instagram.com%2F" target="_blank"><img src="imgs/instagram.png" alt="Instagram" class="icone-social"></a>
+  <a href="https://www.youtube.com/" target="_blank"><img src="imgs/youtube.png" alt="YouTube" class="icone-social"></a>
+  <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%3Flang%3Den&lang=en&enter_method=mandatory" target="_blank"><img src="imgs/tiktok.png" alt="TikTok" class="icone-social"></a>
+  <a href="https://wa.me/551392124291" target="_blank" class="btn-contato">
+  <img src="imgs/whatsapp.png" 
+       alt="WhatsApp" 
+       style="width:24px; height:24px; vertical-align:middle; margin-right:8px;">
+  Fale pelo WhatsApp
+</a>
+
+</div>
+
+
+
+   
+    <div class="text-center mt-4">
+      <p>
+        <img src="imgs/Copyright.png" alt="Ícone copyright" width="17px" height="20px" style="vertical-align: middle; margin-right: 8px;">
+        GameMania - 2025 - Todos os direitos reservados
+      </p>
+      <p id="info-pesquisa" class="mt-3"></p>
+    </div>
+  </div>
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    
+
+</body>
+</html>

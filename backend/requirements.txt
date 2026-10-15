@@ -1,0 +1,13 @@
+# GameMania 2.0 — API (Python 3.11+)
+fastapi>=0.115,<1.0
+uvicorn[standard]>=0.32
+sqlalchemy[asyncio]>=2.0.36,<2.1
+asyncpg>=0.30
+pydantic>=2.9,<3
+pydantic-settings>=2.6
+email-validator>=2.2
+argon2-cffi>=23.1          # Argon2id (senhas)
+bcrypt>=4.2                # somente para validar/migrar hashes legados do server.js
+cryptography>=43           # AES-256-GCM (e-mails)
+pyjwt>=2.9                 # sessão em cookie HttpOnly
+slowapi>=0.1.9             # rate limiting

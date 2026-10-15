@@ -1,0 +1,27 @@
+# Roda a bateria completa (estático + E2E no Chromium + API com PostgreSQL)
+# a cada push na main e na desenvolvimento. Os prints do E2E ficam como artefato.
+name: Testes
+
+on:
+  push:
+    branches: [main, desenvolvimento]
+  workflow_dispatch:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Bateria completa
+        run: bash scripts/testar_tudo.sh
+      - name: Prints do E2E
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prints-e2e
+          path: /tmp/gm-testes/prints/
+          if-no-files-found: ignore

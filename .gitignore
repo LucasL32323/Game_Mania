@@ -1,0 +1,23 @@
+# Segredos e ambiente local
+backend/.env
+.env
+*.env.local
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Node (assets offline dos testes)
+node_modules/
+
+# Saídas temporárias
+/tmp/
+*.log
+.DS_Store
+Thumbs.db
+
+# Pacote gerado para a nuvem do Claude
+.nuvem/
+.legado-tmp/

@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Entre ou cadastre-se | GameMania</title>
+  <meta name="description" content="Entre na sua conta GameMania ou cadastre-se em poucos segundos para finalizar compras, acompanhar pedidos e guardar seus produtos favoritos.">
+  <!-- Página de acesso à conta: sem valor para os buscadores -->
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#212529">
+
+  <!-- Caminhos RELATIVOS (css/, js/, img/): funciona com duplo clique no arquivo,
+       Live Server e no servidor FastAPI (na raiz do site, img/ = /img/). -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&amp;family=Rajdhani:wght@500;600;700&amp;display=swap">
+  <link rel="stylesheet" href="css/gamemania.css">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+
+  <!-- defer: não bloqueia o carregamento; executam na ordem declarada -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous" defer></script>
+  <script src="js/gm-tracker.js" defer></script>
+  <script src="js/gm-ui.js" defer></script>
+</head>
+
+<!-- data-gm-pagina="entrar": o gm-ui.js (seção 12) cuida das abas, da validação e do envio para
+     /api/v1/auth/login e /register; depois volta para ?next= (somente caminho interno do site). -->
+<body data-gm-pagina="entrar">
+  <a class="gm-pular" href="#conteudo">Pular para o conteúdo</a>
+
+  <!-- ===================================================================
+       TOPO — personagem | letreiro | personagem + menu, filete rosa embaixo
+       (mesmo arranjo do site atual). Slot = div#slot-mascote-<contexto>;
+       classe da <img> = nome do arquivo em img/.
+       =================================================================== -->
+  <header class="gm-topo">
+    <div class="container gm-topo__palco">
+      <div id="slot-mascote-principal" class="gm-mascote gm-mascote--topo">
+        <img class="gm-mascote__img mascote-principal" src="img/mascote-principal.png" data-gm-legado="imgs/Logo4.png"
+             alt="" width="160" height="160" loading="lazy" decoding="async">
+      </div>
+
+      <a class="gm-marca" href="index.html" aria-label="GameMania — página inicial">GameMania</a>
+
+      <div id="slot-mascote-secundario" class="gm-mascote gm-mascote--topo gm-mascote--inclinado">
+        <img class="gm-mascote__img mascote-secundario" src="img/mascote-secundario.png" data-gm-legado="imgs/Logo3.png"
+             alt="" width="160" height="160" loading="lazy" decoding="async">
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg gm-nav" aria-label="Principal">
+      <div class="container">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gm-menu"
+                aria-controls="gm-menu" aria-expanded="false" aria-label="Abrir menu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="gm-nav__atalhos order-lg-last">
+          <!-- Logado: o gm-ui.js troca para "Olá, <nome>" e aponta para o painel -->
+          <a class="gm-nav__atalho" href="entreoucadastrese.html" data-gm-usuario aria-label="Entre ou cadastre-se" aria-current="page">
+            <img class="gm-icone icone-usuario" src="img/icone-usuario.png" data-gm-legado="imgs/entreoucadastreseicone.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="gm-nav__rotulo">Entre ou cadastre-se</span>
+          </a>
+          <a class="gm-nav__atalho" href="carrinho.html" data-gm-carrinho-rotulo aria-label="Carrinho">
+            <img class="gm-icone icone-carrinho" src="img/icone-carrinho.png" data-gm-legado="imgs/carrinhocompra1.png" alt="" width="24" height="24" loading="lazy" decoding="async">
+            <span class="gm-carrinho-contador" data-gm-carrinho-contador data-qtd="0" aria-hidden="true"></span>
+          </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="gm-menu">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="index.html">Destaques</a></li>
+            <li class="nav-item"><a class="nav-link" href="hardware.html">Hardware</a></li>
+            <li class="nav-item"><a class="nav-link" href="computadores.html">Computadores</a></li>
+            <li class="nav-item"><a class="nav-link" href="perifericos.html">Periféricos</a></li>
+            <li class="nav-item"><a class="nav-link" href="escritorio.html">Escritório</a></li>
+          </ul>
+
+          <!-- Na home filtra os produtos ao digitar; nas outras páginas leva para index.html?q= -->
+          <form class="gm-busca" role="search" action="index.html" method="get">
+            <label class="visually-hidden" for="gm-busca-q">Buscar produtos</label>
+            <div class="input-group">
+              <input class="form-control" type="search" id="gm-busca-q" name="q" maxlength="80"
+                     placeholder="Buscar produtos..." autocomplete="off">
+              <button class="btn btn-gm btn-gm-primario" type="submit">Buscar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ============================ CONTEÚDO ============================ -->
+  <!-- Duas abas (Bootstrap nav-tabs): Entrar · Criar conta. O gm-ui.js (seção 12) valida os campos,
+       chama POST /api/v1/auth/login ou /register e, com sucesso, volta para ?next= (só caminho interno).
+       ?aba=cadastro ou #criar-conta abrem direto na aba de cadastro (links do site antigo). -->
+  <main id="conteudo" class="container py-4" tabindex="-1">
+    <nav aria-label="Trilha de navegação">
+      <ol class="breadcrumb gm-trilha">
+        <li class="breadcrumb-item"><a href="index.html">Destaques</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Entre ou cadastre-se</li>
+      </ol>
+    </nav>
+
+    <noscript>
+      <p class="gm-bloco">Para entrar ou criar sua conta, ative o JavaScript no navegador ou fale com a gente pelo WhatsApp (13) 9212-4291.</p>
+    </noscript>
+
+    <div class="row g-4 align-items-start justify-content-center">
+      <!-- ===================== FORMULÁRIOS (primeiro no celular) ===================== -->
+      <div class="col-12 col-lg-7 col-xl-6">
+        <section class="gm-bloco gm-auth" aria-labelledby="auth-titulo">
+          <h1 id="auth-titulo" class="gm-pagina-titulo gm-auth__titulo">Entre ou cadastre-se</h1>
+
+          <!-- Visível só quando a pessoa chegou aqui vinda de outra página (?next= válido) -->
+          <p class="gm-auth__continuar" data-gm-auth-continuar hidden>
+            Entre na sua conta para continuar. Depois disso você volta direto para a página em que estava.
+          </p>
+
+          <ul class="nav nav-tabs nav-fill gm-auth__abas" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="aba-entrar" type="button" role="tab"
+                      data-bs-toggle="tab" data-bs-target="#painel-entrar" aria-controls="painel-entrar" aria-selected="true">
+                <img class="gm-icone icone-entrar" src="img/icone-entrar.png" data-gm-legado="imgs/loginperfil.png"
+                     alt="" width="24" height="24" loading="lazy" decoding="async">
+                Entrar
+              </button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="aba-cadastro" type="button" role="tab" tabindex="-1"
+                      data-bs-toggle="tab" data-bs-target="#painel-cadastro" aria-controls="painel-cadastro" aria-selected="false">
+                <img class="gm-icone icone-cadastro" src="img/icone-cadastro.png" data-gm-legado="imgs/cadastroimg.png"
+                     alt="" width="24" height="24" loading="lazy" decoding="async">
+                Criar conta
+              </button>
+            </li>
+          </ul>
+
+          <div class="tab-content gm-auth__paineis">
+            <!-- ===================== ABA 1: ENTRAR ===================== -->
+            <div class="tab-pane fade show active" id="painel-entrar" role="tabpanel" aria-labelledby="aba-entrar" tabindex="0">
+              <form class="gm-auth__form" data-gm-auth="login" novalidate>
+                <!-- Erro da API (mensagem genérica: nunca diz se o e-mail existe) -->
+                <p class="gm-auth__erro" role="alert" data-gm-auth-erro hidden></p>
+
+                <div class="mb-3">
+                  <label class="form-label" for="entrar-email">E-mail</label>
+                  <input class="form-control" type="email" id="entrar-email" name="email" maxlength="254"
+                         autocomplete="username" inputmode="email" spellcheck="false" required
+                         aria-describedby="entrar-email-erro">
+                  <div class="invalid-feedback" id="entrar-email-erro">Digite um e-mail válido, como nome@exemplo.com.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="entrar-senha">Senha</label>
+                  <div class="input-group has-validation gm-senha">
+                    <input class="form-control" type="password" id="entrar-senha" name="password" maxlength="128"
+                           autocomplete="current-password" required aria-describedby="entrar-senha-erro">
+                    <button class="btn gm-senha__ver" type="button" data-gm-senha-ver aria-controls="entrar-senha"
+                            aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+                    <div class="invalid-feedback" id="entrar-senha-erro">Digite sua senha.</div>
+                  </div>
+                </div>
+
+                <button class="btn btn-gm btn-gm-comprar w-100" type="submit" data-gm-auth-enviar data-track="login">
+                  <span data-gm-auth-rotulo>Entrar</span>
+                </button>
+
+                <p class="gm-auth__troca">Ainda não tem uma conta?
+                  <a href="#criar-conta" data-gm-auth-ir="cadastro">Cadastre-se aqui</a></p>
+              </form>
+            </div>
+
+            <!-- ===================== ABA 2: CRIAR CONTA ===================== -->
+            <div class="tab-pane fade" id="painel-cadastro" role="tabpanel" aria-labelledby="aba-cadastro" tabindex="0">
+              <form class="gm-auth__form" data-gm-auth="cadastro" novalidate>
+                <p class="gm-auth__erro" role="alert" data-gm-auth-erro hidden></p>
+
+                <div class="mb-3">
+                  <label class="form-label" for="cadastro-nome">Nome completo</label>
+                  <input class="form-control" type="text" id="cadastro-nome" name="name" minlength="2" maxlength="100"
+                         autocomplete="name" autocapitalize="words" required aria-describedby="cadastro-nome-erro">
+                  <div class="invalid-feedback" id="cadastro-nome-erro">Digite seu nome (de 2 a 100 letras, sem os símbolos &lt; &gt; " ' `).</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="cadastro-email">E-mail</label>
+                  <input class="form-control" type="email" id="cadastro-email" name="email" maxlength="254"
+                         autocomplete="email" inputmode="email" spellcheck="false" required
+                         aria-describedby="cadastro-email-erro">
+                  <div class="invalid-feedback" id="cadastro-email-erro">Digite um e-mail válido, como nome@exemplo.com.</div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="cadastro-senha">Senha</label>
+                  <div class="input-group has-validation gm-senha">
+                    <input class="form-control" type="password" id="cadastro-senha" name="password" minlength="10" maxlength="128"
+                           autocomplete="new-password" required aria-describedby="cadastro-senha-dica cadastro-senha-erro">
+                    <button class="btn gm-senha__ver" type="button" data-gm-senha-ver aria-controls="cadastro-senha"
+                            aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+                    <div class="invalid-feedback" id="cadastro-senha-erro">A senha precisa ter pelo menos 10 caracteres.</div>
+                  </div>
+                  <p class="form-text gm-auth__dica" id="cadastro-senha-dica">Mínimo de 10 caracteres. Dica: use uma frase fácil de lembrar.</p>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label" for="cadastro-confirmar">Confirmar senha</label>
+                  <input class="form-control" type="password" id="cadastro-confirmar" name="confirmar" maxlength="128"
+                         autocomplete="new-password" required aria-describedby="cadastro-confirmar-erro">
+                  <div class="invalid-feedback" id="cadastro-confirmar-erro">As senhas não conferem.</div>
+                </div>
+
+                <button class="btn btn-gm btn-gm-comprar w-100" type="submit" data-gm-auth-enviar data-track="sign_up">
+                  <span data-gm-auth-rotulo>Criar conta</span>
+                </button>
+
+                <p class="gm-auth__troca">Já tem uma conta?
+                  <a href="#entrar" data-gm-auth-ir="entrar">Clique aqui para entrar</a></p>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ===================== VANTAGENS + MASCOTE ===================== -->
+      <div class="col-12 col-lg-5 col-xl-4">
+        <aside class="gm-bloco gm-auth-lado" aria-labelledby="vantagens-titulo">
+          <div id="slot-mascote-login" class="gm-mascote gm-mascote--login">
+            <img class="gm-mascote__img mascote-principal" src="img/mascote-principal.png" data-gm-legado="imgs/Logo4.png"
+                 alt="" width="160" height="160" loading="lazy" decoding="async">
+          </div>
+          <h2 id="vantagens-titulo" class="gm-bloco__titulo gm-auth-lado__titulo">Sua conta GameMania</h2>
+          <ul class="gm-beneficios gm-auth-lado__lista">
+            <li><strong>Pedidos</strong><span>Acompanhe o status de cada compra em Minha conta.</span></li>
+            <li><strong>Favoritos</strong><span>Guarde os produtos que você está de olho.</span></li>
+            <li><strong>Carrinho</strong><span>Seus itens ficam guardados enquanto você entra.</span></li>
+            <li><strong>Segurança</strong><span>Senha protegida com Argon2id e e-mail guardado criptografado.</span></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================ RODAPÉ ============================ -->
+  <footer id="contato" class="gm-rodape">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-5">
+          <h2 class="gm-rodape__titulo">Contato</h2>
+          <address class="mb-0">
+            <ul class="gm-rodape__lista">
+              <li>
+                <img class="gm-icone icone-endereco" src="img/icone-endereco.png" data-gm-legado="imgs/Address.png" alt="" width="20" height="20" loading="lazy" decoding="async">
+                <a href="https://www.google.com/maps?q=Av.+Washington+Lu%C3%ADs,+105,+Santos+-+SP" target="_blank" rel="noopener">Av. Washington Luís, 105 - Vila Matias, Santos - SP</a>
+              </li>
+              <li>
+                <img class="gm-icone icone-telefone" src="img/icone-telefone.png" data-gm-legado="imgs/Telephone.png" alt="" width="20" height="20" loading="lazy" decoding="async">
+                <a href="tel:+551392124291">(13) 9212-4291</a>
+              </li>
+              <li>
+                <img class="gm-icone icone-email" src="img/icone-email.png" data-gm-legado="imgs/email.png" alt="" width="20" height="20" loading="lazy" decoding="async">
+                <a href="mailto:contato@gamemania.com.br">contato@gamemania.com.br</a>
+              </li>
+              <li>
+                <img class="gm-icone icone-horario" src="img/icone-horario.png" data-gm-legado="imgs/horario.png" alt="" width="20" height="20" loading="lazy" decoding="async">
+                <span>Segunda a sábado: 08h às 21h</span>
+              </li>
+            </ul>
+          </address>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-3">
+          <h2 class="gm-rodape__titulo">Atendimento</h2>
+          <ul class="gm-rodape__lista">
+            <li><a href="suporte.html">Suporte</a></li>
+            <li><a href="dashboard.html">Minha conta</a></li>
+            <li><a href="carrinho.html">Carrinho</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-4">
+          <h2 class="gm-rodape__titulo">Siga a GameMania</h2>
+          <div class="gm-redes">
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+              <img class="rede-facebook" src="img/rede-facebook.png" data-gm-legado="imgs/facebook.png" alt="" width="30" height="30" loading="lazy" decoding="async"></a>
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+              <img class="rede-instagram" src="img/rede-instagram.png" data-gm-legado="imgs/instagram.png" alt="" width="30" height="30" loading="lazy" decoding="async"></a>
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener" aria-label="YouTube">
+              <img class="rede-youtube" src="img/rede-youtube.png" data-gm-legado="imgs/youtube.png" alt="" width="30" height="30" loading="lazy" decoding="async"></a>
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+              <img class="rede-tiktok" src="img/rede-tiktok.png" data-gm-legado="imgs/tiktok.png" alt="" width="30" height="30" loading="lazy" decoding="async"></a>
+          </div>
+          <!-- Link direto para a conversa (o site atual levava só para whatsapp.com) -->
+          <a class="btn btn-gm-whatsapp d-inline-flex align-items-center gap-2 mt-3" href="https://wa.me/551392124291"
+             target="_blank" rel="noopener" data-track="whatsapp">
+            <svg class="gm-icone-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3Z"/>
+            </svg>
+            Fale pelo WhatsApp
+          </a>
+        </div>
+      </div>
+      <p class="gm-rodape__base mb-0">© 2026 GameMania · Santos - SP · Todos os direitos reservados</p>
+    </div>
+  </footer>
+
+  <!-- ===================== LGPD: consentimento (opt-in) ===================== -->
+  <aside id="gm-consentimento" class="gm-consentimento" aria-label="Privacidade" hidden>
+    <p>Usamos estatísticas <strong>internas</strong> de navegação (tempo nas páginas e produtos vistos)
+       para melhorar a loja. Nada é vendido ou compartilhado.</p>
+    <div class="d-flex gap-2 justify-content-end">
+      <button class="btn btn-gm btn-gm-carrinho" type="button" data-gm-consent="recusar">Recusar</button>
+      <button class="btn btn-gm btn-gm-comprar" type="button" data-gm-consent="aceitar">Aceitar</button>
+    </div>
+  </aside>
+
+  <!-- ===================== Toasts (preenchidos via textContent) ===================== -->
+  <div id="gm-toasts" class="toast-container position-fixed top-0 end-0 p-3" aria-live="polite"></div>
+  <template id="tpl-toast">
+    <div class="toast gm-toast" role="status" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body"></div>
+        <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+      </div>
+    </div>
+  </template>
+</body>
+</html>

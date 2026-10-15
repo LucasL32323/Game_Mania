@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameMania - PC Gamer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+ <header class="bg-dark text-white py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center gap-3">
+      <img src="imgs/Logo4.png" alt="Logo GameMania" height="160" style="user-select: none; pointer-events: none;">
+      <h1 class="h3 m-0 titulosite">GameMania</h1>
+      <img src="imgs/Logo3.png" alt="Logo GameMania2" height="160" id="logo3">
+    </div>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3 sticky-top">
+    <div class="container">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse d-flex justify-content-between align-items-center" id="menuPrincipal">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="pcgamer.html">Destaques</a></li>
+          <li class="nav-item"><a class="nav-link active" href="hardware.html">Hardware</a></li>
+          <li class="nav-item"><a class="nav-link" href="computadores.html">Computadores</a></li>
+          <li class="nav-item"><a class="nav-link" href="perifericos.html">Periféricos</a></li>
+          <li class="nav-item"><a class="nav-link" href="escritorio.html">Escritório</a></li>
+          <li class="nav-item d-flex align-items-center">
+            <a id="usuarioLogado" class="nav-link d-flex align-items-center gap-2" href="entreoucadastrese.html">
+              <img src="imgs/entreoucadastreseicone.png" alt="Ícone de login" width="20" height="20" draggable="false" />
+              <span id="usuarioTexto">Entre ou cadastre-se</span>
+            </a>
+          </li>
+          <li class="nav-item d-flex align-items-center">
+            <a id="menuCarrinho" class="btn-carrinho-nav" href="carrinho.html">
+              <img src="imgs/carrinhocompra1.png" alt="Carrinho">
+            </a>
+          </li>
+        </ul>
+       
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+<section id="produtos" class="container my-5">
+   <h2 class="mb-4 text-center">
+      <img src="imgs/placamaeicon.png" alt="placamaeicone" style="width: 72px; vertical-align: middle; margin-right: 10px; user-select: none;">
+
+      Equipamentos à Venda
+    </h2>
+
+  <div class="row g-4 product-list">
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/gtx1080.png" class="card-img-top" alt="GTX 1080">
+        <div class="card-body">
+          <h5 class="card-title product-title">Placa de Vídeo GTX 1080</h5>
+          <p>8GB GDDR5X, 10Gbps, 1733Mhz</p>
+          <p class="text-success fw-bold">R$ 1.799,00</p>
+          <a href="gtx1080.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/Ryzen 75800x.png" class="card-img-top" alt="Processador Ryzen 7 5800x">
+        <div class="card-body">
+          <h5 class="card-title product-title">AMD Ryzen 7 5800X</h5>
+          <p>12 núcleos, 24 threads, 4.8GHz</p>
+          <p class="text-success fw-bold">R$ 1.920,00</p>
+          <a href="Ryzen75800x.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/inteli510400f.png" class="card-img-top" alt="Intel Core i5-10400F">
+        <div class="card-body">
+          <h5 class="card-title product-title">Intel Core i5-10400F</h5>
+          <p>6 núcleos, 12 threads, 4.30GHz</p>
+          <p class="text-success fw-bold">R$ 1.299,00</p>
+          <a href="i510400f.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/SSDGiga.png" class="card-img-top" alt="SSD Giga">
+        <div class="card-body">
+          <h5 class="card-title product-title">Gigabyte AORUS RGB M.2 NVMe SSD 512GB</h5>
+          <p>PCIe Gen3 x4, 3480 MB/s leitura, RGB.</p>
+          <p class="text-success fw-bold">R$ 450,00</p>
+          <a href="GigabyteAORUSRGBM2NVMeSSD512GB.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/Asusb550.png" class="card-img-top" alt="Placa-Mãe Asus B550">
+        <div class="card-body">
+          <h5 class="card-title product-title">Placa-Mãe Asus B550</h5>
+          <p>B550, Ryzen 3ª gen, ATX/mATX.</p>
+          <p class="text-success fw-bold">R$ 900,00</p>
+          <a href="PlacaMãeAsusB550.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/Ram.png" class="card-img-top" alt="Memória RAM DDR5">
+        <div class="card-body">
+          <h5 class="card-title product-title">Memória RAM AORUS DDR5</h5>
+          <p>DDR5, 6000MHz, 64GB</p>
+          <p class="text-success fw-bold">R$ 1.200,00</p>
+          <a href="MemoriaRAMAORUSDDR5.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/Fonte.png" class="card-img-top" alt="Fonte RM1000x">
+        <div class="card-body">
+          <h5 class="card-title product-title">Fonte RM1000x</h5>
+          <p>1000W, 80 PLUS Gold, Full Modular</p>
+          <p class="text-success fw-bold">R$ 1.499,00</p>
+          <a href="FonteRM1000x.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+        <img src="imgs/RXVega.png" class="card-img-top" alt="AMD Radeon RX Vega 64">
+        <div class="card-body">
+          <h5 class="card-title product-title">AMD Radeon RX Vega 64</h5>
+          <p>RX Vega 64, 8GB HBM2, 2048-bit</p>
+          <p class="text-success fw-bold">R$ 1.199,00</p>
+          <a href="AMDRadeonRXVega 64.html" class="btn btn-primary">Ver especificações</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-5th">
+      <div class="card h-100 product-item">
+       <img src="imgs/Rtx2080ti.png" class="card-img-top" alt="RTX 2080TI">
+          <div class="card-body">
+            <h5 class="card-title product-title">RTX 2080 Ti</h5>
+            <p>11GB GDDR6, 352-bit</p>
+            <p class="text-success fw-bold">R$ 1.899,00</p>
+            <a href="rtx2080.html" class="btn btn-primary">Ver especificações</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+<footer id="contato" class="rodape-principal">  <div class="container">
+    <div class="contato-bloco">
+  <h5 class="titulo-contato">CONTATO</h5>
+
+  <p>
+ <a href="https://www.google.com/maps?q=Av.+Washington+Luís,+105,+Santos+-+SP" target="_blank" class="link-contato">
+  <img src="imgs/address.png" alt="Ícone endereço" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+  Ver localização no mapa — Av. Washington Luís, 105 - Vila Matias Santos - SP
+</a>
+
+
+  <p>
+    <img src="imgs/Telephone.png" alt="Ícone de telefone" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+    (13) 9212-4291
+  </p>
+
+  <p>
+    <img src="imgs/Email.png" alt="Ícone de e-mail" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+    <a href="mailto:contato@gamemania.com.br" class="link-contato">contato@gamemania.com.br</a>
+  </p>
+
+  <p>
+    <img src="imgs/horario.png" alt="Ícone de horário" style="width: 20px; vertical-align: middle; margin-right: 8px;">
+    Segunda a Sábado: 08h às 21h
+  </p>
+
+
+
+
+</div>
+
+
+      
+<div class="rede-sociais">
+  <a href="https://www.facebook.com/?locale=pt_BR/" target="_blank"><img src="imgs/facebook.png" alt="Facebook" class="icone-social"></a>
+  <a href="https://www.instagram.com/accounts/emailsignup/?next=https%3A%2F%2Fwww.instagram.com%2F" target="_blank"><img src="imgs/instagram.png" alt="Instagram" class="icone-social"></a>
+  <a href="https://www.youtube.com/" target="_blank"><img src="imgs/youtube.png" alt="YouTube" class="icone-social"></a>
+  <a href="https://www.tiktok.com/login?redirect_url=https%3A%2F%2Fwww.tiktok.com%2F%3Flang%3Den&lang=en&enter_method=mandatory" target="_blank"><img src="imgs/tiktok.png" alt="TikTok" class="icone-social"></a>
+  <a href="https://www.whatsapp.com/"  alt ="whatsapp" target="_blank" class="btn-contato" >💬 Fale pelo WhatsApp</a>
+</div>
+
+
+
+   
+    <div class="text-center mt-4">
+      <p>
+        <img src="imgs/Copyright.png" alt="Ícone copyright" width="17px" height="20px" style="vertical-align: middle; margin-right: 8px;">
+        GameMania - 2025 - Todos os direitos reservados
+      </p>
+      <p id="info-pesquisa" class="mt-3"></p>
+    </div>
+  </div>
+</footer>
+
+<script src="barrapesquisa.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ 
+
+
+
+</body>
+</html>
